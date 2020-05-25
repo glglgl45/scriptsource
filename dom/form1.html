@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" name="myform">
+      <input type="text" name="text1" />
+      <input type="button" value="제출" onclick="process()" />
+    </form>
+    <script>
+      // 버튼이 눌러지면 text1 태그 영역 가져오기
+      function process() {
+        // let text = document.querySelector("form");
+        // console.log(text.firstElementChild.value);
+        let text = document.querySelector("input[name='text1']");
+        console.log(text.value);
+      }
+    </script>
+  </body>
+</html>

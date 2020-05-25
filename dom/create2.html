@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 스크립트 문 안에서 문서 요소를 생성해서 삽입
+      // img 태그 <img src="" alt="">
+      let img = document.createElement("img"); // <img>
+      // img.setAttribute("src", "dog.jpg");
+      // img.setAttribute("alt", "강아지");
+
+      img.src = "dog.jpg";
+      img.alt = "강아지";
+      /*window.*/ document.body.appendChild(img);
+    </script>
+  </body>
+</html>
