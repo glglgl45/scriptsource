@@ -6,11 +6,17 @@
     <title>Document</title>
   </head>
   <body>
+    <h3>숫자 맞추기 게임</h3>
+    <p>
+      이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다.
+      <br />
+      숫자는 1~100 사이에 있습니다.
+    </p>
     <form action="">
       <div>
         <label for="num1">숫자</label>
         <input type="text" name="num1" id="num1" />
-        <input type="button" value="확인" />
+        <input type="button" value="확인" onclick="guess1()" />
       </div>
       <div>
         <label for="guess">추측횟수</label>
@@ -21,5 +27,29 @@
         <input type="text" name="hint" id="hint" readonly />
       </div>
     </form>
+    <script>
+      let nGuess = 0; // 추측횟수
+      // 컴퓨터가 생성한 임의의 숫자
+      const random = Math.floor(Math.random() * 100) + 1;
+      console.log(random);
+      function guess1() {
+        // 사용자가 입력한 값을 가져와서
+        let num = parseInt(document.querySelector("#num1").value);
+        let hint = document.querySelector("#hint");
+        let guess = document.querySelector("#guess");
+        // 컴퓨터가 생성한 임의의 숫자랑 비교한 후
+        // 추측값 일치 / 추측값보다 작음 / 추측값보다 큼
+        // 메세지를 hint에 보여주기
+        if (num == random) {
+          hint.value = "추측값 일치";
+        } else if (num > random) {
+          hint.value = "추측값보다 작음";
+        } else if (num < random) {
+          hint.value = "추측값보다 큼";
+        }
+        // 추측횟수를 증가시켜 몇 번만에 맞추는지 알려주기
+        guess.value = ++nGuess;
+      }
+    </script>
   </body>
 </html>
